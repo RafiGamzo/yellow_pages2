@@ -1,0 +1,19 @@
+<h1>Listing regions</h1>
+
+<%= link_to 'New region', new_region_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @regions.each do |region| %>
+   <tr>
+     <td><%= region.title %></td>
+     <td><%= region.text %></td>
+     <td><%= link_to 'Show', region_path(region) %></td>
+   </tr>
+  <% end %>
+</table>
