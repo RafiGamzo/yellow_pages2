@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_121407) do
+ActiveRecord::Schema.define(version: 2019_01_14_084635) do
 
   create_table "regions", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sightings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "species"
+    t.integer "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["region_id"], name: "index_species_on_region_id"
   end
 
 end

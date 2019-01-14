@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @species.title %>
+</p>
+
+<p>
+  <strong>Text</strong>
+  <%= @species.text %>
+</p>
+
+<%= link_to 'Edit', edit_species_path(@species) %> |
+<%= link_to 'Back', species_path %>

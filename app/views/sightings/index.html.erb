@@ -1,0 +1,23 @@
+<h1>Listing sightings</h1>
+
+<%= link_to 'New sighting', new_sighting_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @sighting.each do |sighting| %>
+   <tr>
+     <td><%= sighting.title %></td>
+     <td><%= sighting.text %></td>
+     <td><%= link_to 'Show', sighting_path(sighting) %></td>
+     <td><%= link_to 'Edit', sighting_region_path(sighting) %></td>
+     <td><%= link_to 'Destroy', sighting_path(sighting),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+  <% end %>
+</table>

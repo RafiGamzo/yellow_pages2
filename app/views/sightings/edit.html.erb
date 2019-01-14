@@ -1,0 +1,35 @@
+<h1>Edit sighting</h1>
+
+<%= form_with(model: @sighting, local: true) do |form| %>
+
+  <% if @sighting.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@sighting.errors.count, "error") %> prohibited
+        this region from being saved:
+      </h2>
+      <ul>
+        <% @sighting.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', sightings_path %>

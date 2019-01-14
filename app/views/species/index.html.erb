@@ -1,0 +1,23 @@
+<h1>Listing species</h1>
+
+<%= link_to 'New species', new_species_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @species.each do |species| %>
+   <tr>
+     <td><%= species.title %></td>
+     <td><%= species.text %></td>
+     <td><%= link_to 'Show', species_path(species) %></td>
+     <td><%= link_to 'Edit', species_region_path(species) %></td>
+     <td><%= link_to 'Destroy', species_path(species),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+  <% end %>
+</table>
